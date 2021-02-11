@@ -27,6 +27,20 @@ for (let i = 0; i < boxes.length; i++) {
   });
 }
 
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    secondPlayer = this.getAttribute("id");
+    for (let j = 0; j < buttons.length; j++) {
+      buttons[j].style.display = "none";
+    }
+
+    setTimeout(() => {
+      let container = document.querySelector("#container");
+      container.classList.remove("hide");
+    }, 500);
+  });
+}
+
 function checkElement(player1, player2) {
   if (player1 == player2) {
     elemento = x;
